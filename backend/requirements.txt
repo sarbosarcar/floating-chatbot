@@ -1,4 +1,4 @@
-fastapi 
+fastapi[standard]
 langchain
 transformers 
 huggingface_hub 
