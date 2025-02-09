@@ -1,0 +1,8 @@
+.env
+.venv/
+data/
+temp.py
+__pycache__/
+faiss_index/
+.vercel
+app.py

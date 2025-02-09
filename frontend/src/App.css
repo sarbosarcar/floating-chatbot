@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@keyframes gradient-x {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@layer utilities {
+  .animate-text {
+    background-size: 300% 300%;
+    animation: gradient-x 5s ease-in-out infinite;
+  }
+
+  .glow {
+    text-shadow: 0 0 8px rgba(59, 130, 246, 0.8), 
+                 0 0 16px rgba(139, 92, 246, 0.8), 
+                 0 0 32px rgba(34, 211, 238, 0.5);
+  }
+}
