@@ -2,7 +2,7 @@ import faiss
 import numpy as np
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
-from .preprocess import load_files, save_embeddings, split_text, crawl_and_load, load_from_json, load_md
+from preprocess import load_files, save_embeddings, split_text, crawl_and_load, load_from_json, load_md
 
 def prepare_db():
     # docs = load_from_json()
