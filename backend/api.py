@@ -15,7 +15,7 @@ db = load_index("index")
 origins = [
     # "*",
     "http://localhost:5173",  # Development
-    "https://floating-chatbot-frontend.vercel.app/",  # Replace with actual production domain
+    "https://floating-chatbot-frontend.vercel.app",  # Replace with actual production domain
 ]
 
 # Add CORS middleware
