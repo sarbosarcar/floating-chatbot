@@ -28,16 +28,15 @@ User Query:
 Generate a helpful response.
 """
 
-messages = [
-    {
-        "role": "system",
-        "content": "You are an AI chatbot integrated on a website, helping users with their queries by providing appropriate responses based on the context provided. Respond in a concise, informative manner and maintain an approachable tone. If you do not know an answer clearly state so. You will not add extra information and provide the shortest, clearest possible answer. If the spellings for events retrieved do not match, do not reply with any details."
-    },
-]
-
 # Function to generate a chatbot response
 def prompt_answer(query, context):
     # Construct the prompt
+    messages = [
+        {
+            "role": "system",
+            "content": "You are an AI chatbot integrated on a website, helping users with their queries by providing appropriate responses based on the context provided. Respond in a concise, informative manner and maintain an approachable tone. If you do not know an answer clearly state so. You will not add extra information and provide the shortest, clearest possible answer. If the spellings for events retrieved do not match, do not reply with any details."
+        },
+    ]
     prompt = PROMPT_TEMPLATE.format(context=context, query=query)
     messages.append(
         {
@@ -49,7 +48,7 @@ def prompt_answer(query, context):
         # Call the inference client
         response = client.chat_completion(messages, max_tokens=2048).choices[0].message.content
     except Exception as e:
-        response = f"An error occurred! Please retry!: {e}"
+        response = f"It seems like there was some trouble responding to the query! Please retry."
     return response
 
 def get_response(question: str):
