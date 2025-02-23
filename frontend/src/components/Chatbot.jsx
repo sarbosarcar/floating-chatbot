@@ -29,7 +29,7 @@ export const Chatbot = () => {
     setMessages((prev) => [...prev, userMessage]);
 
     try {
-      const response = await axios.post("https://floating-chatbot-backend.onrender.com/chat", {
+      const response = await axios.post("http://localhost:8000/chat", {
         question: input,
       });
 

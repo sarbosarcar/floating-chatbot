@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from chat import prompt_answer
 from retrieval import fetch_sources, load_index
+from agent import fetch_response
 import uvicorn
 
 # Initialize FastAPI app
@@ -38,9 +39,10 @@ def read_root():
 @app.post("/chat")
 def ask_question(request: QuestionRequest):
     question = request.question
-    contents = fetch_sources(question, db)
-    reply = prompt_answer(question, contents)
+    # contents = fetch_sources(question, db)
+    # reply = prompt_answer(question, contents)
+    reply = fetch_response(question)
     return {"response": reply}
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0")
+    uvicorn.run(app, host="localhost")
